@@ -1,0 +1,26 @@
+{
+    "connection": "...",
+    "commonInfo": "...",
+    "flows":[
+        {
+            "loadType": "Scd0ParserAppendPartition",
+            "source": {
+                "schema": "...",
+                "table": "...",
+                "columnsWithJson": [],
+                "parsedColumns": [],
+                "preFilterCondition": "...",
+                "postFilterCondition": "...",
+                "incrementField": "hdp_processed_dttm",
+                "extractKafkaIncrementFlag": "..."
+            },
+            "target": {
+            "table": "...",
+            "aggregationField": "date_format(processed_dttm,'yyyyMMdd')",
+            "partitionFields": ["dte"],
+            "customPartitioning": "CustomExpression",
+            "updateAllowed": "True"
+            }
+        }
+    ]
+}
